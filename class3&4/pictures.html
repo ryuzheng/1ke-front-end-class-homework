@@ -1,0 +1,118 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>图片排版</title>
+<style>
+  * {
+    font-family: "微软雅黑";
+  }
+
+  body {
+    width: 1200px;
+    margin: 50px auto 0 auto;
+  }
+
+  .images {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 172px;
+    margin: 10px;
+  }
+
+  .images img {
+    width: 100%;
+  }
+
+  .images:hover {
+    transform: scale(0.9,0.9);
+    transition: all 0.3s;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .title {
+    position: absolute;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.6);
+    width:100%;
+    color:#fff;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .title:hover {
+    background: rgba(165, 222, 228, 0.6);
+  }
+
+  .tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(36, 147, 110, 0.6);;
+    color: #fff;
+    width: auto;
+    text-align: right;
+  }
+</style>
+</head>
+
+<body>
+  <div class="images">
+    <a href="#">
+    <img src="img/001.jpg" alt="" />
+    <div class="title">菠萝</div>
+    <div class="tag">水果</div>
+    </a>
+  </div>
+  <div class="images">
+    <a href="#">
+    <img src="img/002.jpg" alt="" />
+    <div class="title">酒店</div>
+    <div class="tag">风景</div>
+    </a>
+  </div>
+  <div class="images">
+    <a href="#">
+    <img src="img/003.jpg" alt="" />
+    <div class="title">自由女神</div>
+    <div class="tag">风景</div>
+    </a>
+  </div>
+  <div class="images">
+    <img src="img/004.jpg" alt="" />
+    <div class="title">俯瞰</div>
+    <div class="tag">风景</div>
+    </a>
+  </div>
+  <div class="images">
+    <a href="#">
+    <img src="img/005.jpg" alt="" />
+    <div class="title">画</div>
+    <div class="tag">画</div>
+    </a>
+  </div>
+  <div class="images">
+    <a href="#">
+    <img src="img/006.jpg" alt="" />
+    <div class="title">少年</div>
+    <div class="tag">人物</div>
+    </a>
+  </div>
+  <div class="images">
+    <a href="#">
+    <img src="img/007.jpg" alt="" />
+    <div class="title">工程</div>
+    <div class="tag">工作</div>
+    </a>
+  </div>
+  <div class="images">
+    <a href="#">
+    <img src="img/008.jpg" alt="" />
+    <div class="title">广场</div>
+    <div class="tag">风景</div>
+    </a>
+  </div>
+</body>
+</html>

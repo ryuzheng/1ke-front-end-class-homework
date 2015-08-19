@@ -1,0 +1,293 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>6种不同布局</title>
+<style type="text/css">
+    * {
+      font-family: "微软雅黑";
+    }
+
+    body {
+      width: 960px;
+      text-align: center;
+      margin: 0 10%;
+      padding: 20px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .body {
+      float: left;
+      height: 100px;
+    }
+
+    .float {
+      float: left;
+    }
+
+    /**定义第一种布局**/
+    #layout1 {
+      width: 30%;
+      margin: 5% 1%;
+    }
+
+    #layout1-header {
+      width: 100%;
+      height: 50px;
+      background: red;
+    }
+
+    #layout1-body {
+      width: 100%;
+      height: 100px;
+      background: yellow;
+    }
+
+    #layout1-footer {
+      width: 100%;
+      height: 50px;
+      background: green;
+    }
+    /********/
+
+    /**定义第二种布局**/
+    #layout2 {
+      width: 30%;
+      margin: 5% 1%;
+    }
+
+    #layout2-header {
+      width: 100%;
+      height: 50px;
+      background: red;
+    }
+
+    #layout2-left {
+      width: 80%;
+      background: yellow;
+    }
+
+    #layout2-right {
+      width: 20%;
+      background: gray;
+    }
+
+    #layout2-footer {
+      width: 100%;
+      height: 50px;
+      background: green;
+    }
+    /********/
+
+    /**定义第三种布局**/
+    #layout3 {
+      width: 30%;
+      margin: 5% 1%;
+    }
+
+    #layout3-header {
+      width: 100%;
+      height: 50px;
+      background: red;
+    }
+
+    #layout3-left {
+      width: 20%;
+      background: yellow;
+    }
+
+    #layout3-right {
+      width: 80%;
+      background: gray;
+    }
+
+    #layout3-footer {
+      width: 100%;
+      height: 50px;
+      background: green;
+    }
+    /********/
+
+    /**定义第四种布局**/
+    #layout4 {
+      width: 30%;
+      margin: 5% 1%;
+    }
+
+    #layout4-header {
+      width: 100%;
+      height: 50px;
+      background: red;
+    }
+
+    #layout4-left {
+      width: 60%;
+      background: yellow;
+    }
+
+    #layout4-center {
+      width: 20%;
+      background: pink;
+    }
+
+    #layout4-right {
+      width: 20%;
+      background: gray;
+    }
+
+    #layout4-footer {
+      width: 100%;
+      height: 50px;
+      background: green;
+    }
+    /********/
+
+    /**定义第五种布局**/
+    #layout5 {
+      width: 30%;
+      margin: 5% 1%;
+    }
+
+    #layout5-header {
+      width: 100%;
+      height: 50px;
+      background: red;
+    }
+
+    #layout5-left {
+      width: 20%;
+      background: yellow;
+    }
+
+    #layout5-center {
+      width: 20%;
+      background: pink;
+    }
+
+    #layout5-right {
+      width: 60%;
+      background: gray;
+    }
+
+    #layout5-footer {
+      width: 100%;
+      height: 50px;
+      background: green;
+    }
+    /********/
+
+    /**定义第六种布局**/
+    #layout6 {
+      width: 30%;
+      margin: 5% 1%;
+    }
+
+    #layout6-header {
+      width: 100%;
+      height: 50px;
+      background: red;
+    }
+
+    #layout6-left {
+      width: 20%;
+      background: yellow;
+    }
+
+    #layout6-center {
+      width: 60%;
+      background: pink;
+    }
+
+    #layout6-right {
+      width: 20%;
+      background: gray;
+    }
+
+    #layout6-footer {
+      width: 100%;
+      height: 50px;
+      background: green;
+    }
+    /********/
+</style>
+</head>
+
+<body>
+    <h1>6种不同布局</h1>
+        <div id="layout1" class="float">
+          <div id="layout1-header" title="header"></div>
+          <div id="layout1-body" title="body"></div>
+          <div id="layout1-footer" title="footer"></div>
+          <p>
+            1 COLUMN WIDE
+          </p>
+        </div>
+
+        </div>
+
+        <div id="layout2" class="float">
+          <div id="layout2-header" title="header"></div>
+          <div id="layout2-left" class="body" title="left body"></div>
+          <div id="layout2-right" class="body" title="right body"></div>
+          <div class="clear"></div>
+          <div id="layout2-footer" title="footer"></div>
+          <p>
+            2 COLUMN,LEFT
+          </p>
+        </div>
+
+        </div>
+
+        <div id="layout3" class="float">
+          <div id="layout3-header" title="header"></div>
+          <div id="layout3-left"  class="body" title="left body"></div>
+          <div id="layout3-right"  class="body" title="right body"></div>
+          <div class="clear"></div>
+          <div id="layout3-footer" title="footer"></div>
+          <p>
+            2 COLUMN,RIGHT
+          </p>
+        </div>
+
+        </div>
+
+        <div id="layout4" class="float">
+          <div id="layout4-header" title="header"></div>
+          <div id="layout4-left"  class="body" title="left body"></div>
+          <div id="layout4-center" class="body" title="center body"></div>
+          <div id="layout4-right"  class="body" title="right body"></div>
+          <div class="clear"></div>
+          <div id="layout4-footer" title="footer"></div>
+          <p>
+            3 COLUMN,LEFT
+          </p>
+        </div>
+
+        <div id="layout5" class="float">
+          <div id="layout5-header" title="header"></div>
+          <div id="layout5-left"  class="body" title="left body"></div>
+          <div id="layout5-center" class="body" title="center body"></div>
+          <div id="layout5-right"  class="body" title="right body"></div>
+          <div class="clear"></div>
+          <div id="layout5-footer" title="footer"></div>
+          <p>
+            3 COLUMN,RIGHT
+          </p>
+        </div>
+
+        <div id="layout6" class="float">
+          <div id="layout6-header" title="header"></div>
+          <div id="layout6-left"  class="body" title="left body"></div>
+          <div id="layout6-center" class="body" title="center body"></div>
+          <div id="layout6-right"  class="body" title="right body"></div>
+          <div class="clear"></div>
+          <div id="layout6-footer" title="footer"></div>
+          <p>
+            3 COLUMN,CENTER
+          </p>
+        </div>
+</body>
+</html>

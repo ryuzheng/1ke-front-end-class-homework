@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>用户注册 - 1ke-class7</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+
+    .header {
+      padding-top: 1px;
+      color: #fff;
+      background: #0078d8;
+    }
+
+    .inner-wrapper {
+      position: relative;
+      width: 740px;
+      margin: 0 auto;
+      background: #0078d8;
+      height: 500px;
+    }
+
+    .form-wrapper {
+      position: relative;
+      width: 340px;
+      height: 100%;
+      min-height: 360px;
+      margin-left: 400px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 45%;
+      left: -400px;
+      margin-top: -62px;
+      width: 345px;
+      height: 124px;
+      background-image: url(logo.png);
+    }
+
+    .signup {
+      margin-left: 20px;
+    }
+
+    .note {
+      font-size: 10px;
+      color: #ccc;
+    }
+
+    .submitbutton {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    .focus {
+      background: pink;
+    }
+
+    .unfocus {
+      background: white;
+    }
+
+    .show {
+      font-size: 10px;
+      color: red;
+    }
+
+    .sign {
+      border: 1px solid #000;
+      background: red;
+      font-size: 20px;
+    }
+  </style>
+  <script type="text/javascript">
+    /**onBlur事件提示填写，并且设置placeholder**/
+    function setStyle(tagid) {
+      var tag = document.getElementById(tagid);
+      if (tag.value == "") {
+        tag.setAttribute("class", "focus");
+        tag.placeholder = "请填写该项";
+      } else {
+        tag.setAttribute("class", "unfocus");
+      }
+    }
+
+    /**用Js验证表单,需要submit**/
+    /**function CheckPost() {
+      var usernamemsg = document.getElementById("usernamemsg");
+      if (myform.username.value == "") {
+        usernamemsg.setAttribute("class", "show");
+        usernamemsg.innerHTML = "请填写用户名";
+        myform.username.focus();
+        return false;
+      }
+
+      var pswmsg = document.getElementById("pswmsg");
+      if (myform.psw.value == "") {
+        pswmsg.setAttribute("class", "show");
+        pswmsg.innerHTML = "请填写密码";
+        myform.psw.focus();
+        return false;
+      }
+
+      var mailmsg = document.getElementById("mailmsg");
+      if (myform.mail.value == "") {
+        mailmsg.setAttribute("class", "show");
+        mailmsg.innerHTML = "请填写邮箱";
+        myform.mail.focus();
+        return false;
+      }
+
+      var sexmsg = document.getElementById("sexmsg");
+      if (myform.sex.value != "female") {
+        sexmsg.setAttribute("class", "show");
+        sexmsg.innerHTML = "请选择性别";
+        myform.sex.focus();
+        return false;
+      }
+
+      var agreemsg = document.getElementById("agreemsg");
+      if ((myform.terms.value != true) || (myform.policy.value != true)){
+        agreemsg.setAttribute("class", "show");
+        agreemsg.innerHTML = "使用本网站服务需要同意相关条款";
+        return false;
+      }
+
+      return true;
+    }**/
+
+    function CheckSex() {
+      if (myform.sex.value == "男") {
+        alert("目前只支持妹纸注册");
+        return false;
+      }
+      return true;
+    }
+
+    var xmlHttp;
+    function createxmlHttpRequest() {
+      if (window.ActiveXObject) {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      } else if (window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+      }
+    }
+
+    /**用ajax验证用户名，修改为用户名填写后onblur后显示提示该用户未注册，没填写用户名不提示**/
+    function doPOST() {
+      createxmlHttpRequest();
+      var usernamemsg = document.getElementById("usernamemsg");
+      if (myform.username.value != "") {
+        xmlHttp.open("POST", "http://localhost/1ke-class7/checkuser_post.php", true);
+        xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlHttp.send("username=" + myform.username.value);
+        xmlHttp.onreadystatechange = function() {
+          if ((xmlHttp.readyState == 4) && (xmlHttp.status == 200)) {
+            usernamemsg.setAttribute("class", "show");
+            usernamemsg.innerHTML = xmlHttp.responseText;
+          }
+        }
+      }
+    }
+
+    /**用ajax提交表单**/
+    function ajaxPOST() {
+      createxmlHttpRequest();
+      var sign = document.getElementById("sign");
+      xmlHttp.open("POST", "http://localhost/1ke-class7/post.php", true);
+      xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xmlHttp.send("username=" + myform.username.value + "&psw=" + myform.psw.value+ "&mail=" + myform.mail.value+ "&website=" + myform.website.value+ "&sex=" + myform.sex.value+ "&terms=" + myform.terms.value+"&policy="+myform.policy.value);
+      xmlHttp.onreadystatechange = function() {
+        if ((xmlHttp.readyState == 4) && (xmlHttp.status == 200)) {
+          sign.setAttribute("class", "sign");
+          sign.innerHTML = xmlHttp.responseText;
+        }else{
+          alert("发生错误：" + request.status);
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="inner-wrapper">
+      <div class="form-wrapper">
+        <div class="logo"></div>
+        <div class="signup">
+          <h2>注册账号</h2>
+          <!--使用js提交表单，使用action与onsubmit验证-->
+          <!--<form action="http://localhost/1ke-class7/post.php" method="post" name="myform" onsubmit="CheckPost()">-->
+          <form name="myform">
+            <p>用户名</p>
+            <input type="text" name="username" onblur="setStyle(this.id);doPOST()" id="txt_username">
+            <div id="usernamemsg"></div>
+            <p>密码</p>
+            <input type="password" name="psw" onblur="setStyle(this.id)" id="txt_psw">
+            <div id="pswmsg"></div>
+            <p>电子邮件</p>
+            <input type="text" name="mail" onblur="setStyle(this.id)" id="txt_mail">
+            <select name="website" id="website">
+              <option value="@qq.com">@qq.com</option>
+              <option value="@163.com">@163.com</option>
+              <option value="@gmail.com">@gmail.com</option>
+              <option value="@outlook.com">@outlook.com</option>
+              <!-- <option value="others">其他邮箱请输入<input type="text" name="others"></option> -->
+            </select>
+            <div id="mailmsg"></div>
+            <p class="note">目前只支持以上邮箱</p>
+            <p>性别： 男
+              <input type="radio" name="sex" value="男" onclick="return CheckSex();"> 女
+              <input type="radio" name="sex" value="女">
+            </p>
+            <div id="sexmsg"></div>
+            <input type="checkbox" name="terms" value="true">我同意网站服务条款
+            <input type="checkbox" name="policy" value="true">我同意隐私政策
+            <div id="agreemsg"></div>
+            <!--使用submit提交表单-->
+            <!--<button type="submit" class="submitbutton">注册知乎</button>-->
+          </form>
+          <!--使用ajax提交表单-->
+          <button type="button" onclick="ajaxPOST()" class="submitbutton">注册知乎</button>
+          <div id="sign"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

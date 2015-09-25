@@ -40,4 +40,8 @@
 
 ![](https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class6/WEB前端课程_第六课JavaScript基础.jpg?raw=true)
 
-##class7 8.17 
+##class7 JavaScript实战 8.17
+
+[预览：class7作业](http://htmlpreview.github.io/?https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class7/1ke-class7.html)
+
+![]()

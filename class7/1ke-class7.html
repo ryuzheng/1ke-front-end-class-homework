@@ -130,13 +130,13 @@
       return true;
     }**/
 
-    function CheckSex() {
+    /**function CheckSex() {
       if (myform.sex.value == "男") {
         alert("目前只支持妹纸注册");
         return false;
       }
       return true;
-    }
+    }**/
 
     var xmlHttp;
     function createxmlHttpRequest() {
@@ -170,7 +170,7 @@
       var sign = document.getElementById("sign");
       xmlHttp.open("POST", "http://localhost/1ke-class7/post.php", true);
       xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlHttp.send("username=" + myform.username.value + "&psw=" + myform.psw.value+ "&mail=" + myform.mail.value+ "&website=" + myform.website.value+ "&sex=" + myform.sex.value+ "&terms=" + myform.terms.value+"&policy="+myform.policy.value);
+      xmlHttp.send("username=" + myform.username.value + "&psw=" + myform.psw.value+ "&mail=" + myform.mail.value+ "&website=" + myform.website.value+ "&sex=" + myform.sex.value+ "&terms=" + myform.terms.checked+"&policy="+myform.policy.checked);
       xmlHttp.onreadystatechange = function() {
         if ((xmlHttp.readyState == 4) && (xmlHttp.status == 200)) {
           sign.setAttribute("class", "sign");
@@ -211,12 +211,12 @@
             <div id="mailmsg"></div>
             <p class="note">目前只支持以上邮箱</p>
             <p>性别： 男
-              <input type="radio" name="sex" value="男" onclick="return CheckSex();"> 女
+              <input type="radio" name="sex" value="男"> 女
               <input type="radio" name="sex" value="女">
             </p>
             <div id="sexmsg"></div>
-            <input type="checkbox" name="terms" value="true">我同意网站服务条款
-            <input type="checkbox" name="policy" value="true">我同意隐私政策
+            <input type="checkbox" name="terms">我同意网站服务条款
+            <input type="checkbox" name="policy">我同意隐私政策
             <div id="agreemsg"></div>
             <!--使用submit提交表单-->
             <!--<button type="submit" class="submitbutton">注册知乎</button>-->

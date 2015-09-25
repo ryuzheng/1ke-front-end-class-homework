@@ -7,10 +7,10 @@ header("Content-type:text/html; charset=UTF-8");
   ||!isset($_POST["website"])||empty($_POST["website"])
   ||!isset($_POST["sex"])||empty($_POST["sex"])
   ||!isset($_POST["psw"])||empty($_POST["psw"])
-  ||$_POST["terms"]!="true"||$_POST["policy"]!="true"){
+  ||$_POST["terms"]=="false"||$_POST["policy"]=="false"){
     echo "注册信息填写不完整";
     return;
   }
 
-  echo "恭喜你注册成功！"."<br>"."用户名是: ".$_POST["username"]." 密码是: ".$_POST["psw"]." 邮箱是: ".$_POST["mail"].$_POST["website"]." 性别是：".$_POST["sex"];
+  echo "恭喜你注册成功！"."<br>"."用户名是: ".$_POST["username"]." 密码是: ".$_POST["psw"]." 邮箱是: ".$_POST["mail"].$_POST["website"]." 性别是：".$_POST["sex"]." 是否同意网站服务条款：".$_POST["terms"]." 是否同意隐私政策：".$_POST["policy"];
  ?>

@@ -71,3 +71,11 @@
 [预览2：class8作业](http://www.1ke.co/homework/frontend1/FN001038/lesson6/index.html)
 
 ![](https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class8/class8.png?raw=true)
+
+-----
+
+##class9 jQuery应用 8.24
+
+[预览：class8作业](http://htmlpreview.github.io/?https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class9/1ke-class9.html)
+
+![](https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class9/class9.png?raw=true)

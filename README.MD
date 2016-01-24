@@ -76,6 +76,6 @@
 
 ##class9 jQuery应用 8.24
 
-[预览：class8作业](http://htmlpreview.github.io/?https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class9/1ke-class9.html)
+[预览：class9作业](http://htmlpreview.github.io/?https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class9/1ke-class9.html)
 
 ![](https://github.com/ryuzheng/1ke-front-end-class-homework/blob/master/class9/class9.png?raw=true)

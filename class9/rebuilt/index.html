@@ -12,51 +12,73 @@
   }
 
   .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
+    width: 100%;
   }
 
   ul li {
     list-style: none;
   }
+
+  a {
+    text-decoration: none;
+  }
   /******/
 
   nav {
-    flex: 20;
+    width: 20%;
+    float: left;
     padding-top: 200px;
   }
 
   nav img {
     width: 60px;
-    margin-left: 40px;
+    margin-left: 60px;
+  }
+
+  nav ul {
+    margin-left: 20px;
+  }
+
+  .category {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .category a {
+    color: #2c3e50;
+  }
+
+  .information {
+    text-transform: capitalize;
+    font-weight: lighter;
+  }
+
+  .information a {
+    color: #bdc3c7;
   }
   /******/
 
   section {
-    flex: 80;
-    min-width: 600px;
+    width: 80%;
+    float: left;
   }
 
   section ul li {
     box-sizing: border-box;
     float: left;
-    width: 33.3%;
+    width: 33%;
     padding: 10px;
   }
 
   section img {
-    min-width: 100px;
-    max-width: 300px;
+    width: 100%;
   }
 </style>
 
 <body>
   <div class="container">
     <nav>
-      <a href="#">
+      <a href="#" class="logo">
         <img src="images/logo.png">
       </a>
       <ul class="category">
@@ -73,25 +95,16 @@
 
     <section>
       <div class="slider">
-        <div class="main" id="template_main">
-          <div class="main-i" id="main_{{index}}">
-            <img src="images/{{index}}.jpg" class="picture">
-          </div>
-        </div>
-        <div class="ctrl" id="template_ctrl">
-          <a class="ctrl-i" id="ctrl_{{index}}" href="javascript:switchSlider({{index}});">
-            <img src="images/{{index}}.jpg" />
-          </a>
-        </div>
+
         <ul>
           <li>
             <a href="page.html">
-              <img src="images/cat-mens.jpg" class="img-responsive">
+              <img src="images/cat-mens.jpg">
             </a>
           </li>
           <li>
             <a href="page.html">
-              <img src="images/cat-women.jpg" class="img-responsive">
+              <img src="images/cat-women.jpg">
             </a>
           </li>
           <li>

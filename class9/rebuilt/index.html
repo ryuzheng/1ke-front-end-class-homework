@@ -4,78 +4,87 @@
 <head>
   <meta charset="UTF-8">
   <title>SUPPLY</title>
+  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/unslider.min.js"></script>
+  <link rel="stylesheet" href="css/unslider.css">
+  <script>
+  		jQuery(document).ready(function($) {
+  			$('.my-slider').unslider();
+  		});
+  	</script>
+
+  <style media="screen">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    /******/
+
+    nav {
+      width: 20%;
+      float: left;
+      padding-top: 200px;
+    }
+
+    nav img {
+      width: 60px;
+      margin-left: 60px;
+    }
+
+    nav ul {
+      margin-left: 20px;
+    }
+
+    .category {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .category a {
+      color: #2c3e50;
+    }
+
+    .information {
+      text-transform: capitalize;
+      font-weight: lighter;
+    }
+
+    .information a {
+      color: #bdc3c7;
+    }
+    /******/
+
+    section {
+      width: 80%;
+      float: right;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section .slidr ul li {
+      box-sizing: border-box;
+      float: left;
+      width: 33%;
+      padding: 10px;
+    }
+
+    section img {
+      width: 100%;
+    }
+  </style>
 </head>
-<style media="screen">
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  ul li {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-  /******/
-
-  nav {
-    width: 20%;
-    float: left;
-    padding-top: 200px;
-  }
-
-  nav img {
-    width: 60px;
-    margin-left: 60px;
-  }
-
-  nav ul {
-    margin-left: 20px;
-  }
-
-  .category {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  .category a {
-    color: #2c3e50;
-  }
-
-  .information {
-    text-transform: capitalize;
-    font-weight: lighter;
-  }
-
-  .information a {
-    color: #bdc3c7;
-  }
-  /******/
-
-  section {
-    width: 80%;
-    float: right;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  section ul li {
-    box-sizing: border-box;
-    float: left;
-    width: 33%;
-    padding: 10px;
-  }
-
-  section img {
-    width: 100%;
-  }
-</style>
 
 <body>
   <div class="container">
@@ -97,7 +106,6 @@
 
     <section>
       <div class="slider">
-
         <ul>
           <li>
             <a href="page.html">
@@ -114,6 +122,13 @@
               <img src="images/cat-lifestyle.jpg" class="img-responsive">
             </a>
           </li>
+        </ul>
+      </div>
+      <div class="my-slider">
+        <ul>
+          <li>My slide</li>
+          <li>Another slide</li>
+          <li>My last slide</li>
         </ul>
       </div>
     </section>

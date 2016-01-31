@@ -4,15 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>SUPPLY</title>
-  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="js/unslider.min.js"></script>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/unslider-min.js"></script>
   <link rel="stylesheet" href="css/unslider.css">
-  <script>
-  		jQuery(document).ready(function($) {
-  			$('.my-slider').unslider();
-  		});
-  	</script>
-
   <style media="screen">
     body {
       margin: 0;
@@ -21,10 +15,6 @@
 
     .container {
       width: 100%;
-    }
-
-    ul li {
-      list-style: none;
     }
 
     a {
@@ -45,6 +35,10 @@
 
     nav ul {
       margin-left: 20px;
+    }
+
+    nav ul li {
+      list-style: none;
     }
 
     .category {
@@ -68,20 +62,34 @@
 
     section {
       width: 80%;
-      float: right;
-      margin-left: auto;
-      margin-right: auto;
+      float: left;
+      max-width: 977px;
     }
 
-    section .slidr ul li {
+    .classification ul li {
       box-sizing: border-box;
+      list-style: none;
       float: left;
-      width: 33%;
+      width: 33.3%;
       padding: 10px;
     }
 
     section img {
       width: 100%;
+    }
+
+    .my-slider {
+      height: 553px;
+    }
+    .my-slider img{
+      width: 977px;
+    }
+    /******/
+
+    .clearfix {
+      clear: both;
+      width: 0;
+      height: 0;
     }
   </style>
 </head>
@@ -105,7 +113,26 @@
     </nav>
 
     <section>
-      <div class="slider">
+      <div class="my-slider">
+        <ul>
+          <li><img src="images/1.jpg" alt="" /></li>
+          <li><img src="images/2.jpg" alt="" /></li>
+          <li><img src="images/3.jpg" alt=""></li>
+        </ul>
+      </div>
+
+      <script>
+        jQuery(document).ready(function($) {
+          $('.my-slider').unslider({
+            animation: 'fade',
+            autoplay: true,
+            arrows: false,
+            nav: false
+          });
+        });
+      </script>
+
+      <div class="classification">
         <ul>
           <li>
             <a href="page.html">
@@ -124,15 +151,10 @@
           </li>
         </ul>
       </div>
-      <div class="my-slider">
-        <ul>
-          <li>My slide</li>
-          <li>Another slide</li>
-          <li>My last slide</li>
-        </ul>
-      </div>
+      <div class="clearfix"></div>
     </section>
   </div>
+  <div class="clearfix"></div>
 </body>
 
 </html>

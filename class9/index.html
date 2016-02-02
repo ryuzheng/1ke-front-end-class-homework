@@ -6,7 +6,6 @@
   <title>SUPPLY</title>
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/unslider-min.js"></script>
-  <script src="js/prefixfree.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="css/unslider.css">
   <style media="screen">
     body {
@@ -65,24 +64,35 @@
       width: 80%;
       float: left;
       max-width: 977px;
+      margin-top: 50px;
+    }
+
+    .classification ul {
+      padding-left: 0px;
     }
 
     .classification ul li {
       box-sizing: border-box;
       list-style: none;
       float: left;
-      width: 33.3%;
+      width: 33.33%;
       padding: 10px;
     }
 
-    section img {
-      width: 100%;
+    .classification li:first-child {
+      padding-left: 0px;
+    }
+
+    .classification li:last-child {
+      padding-left: 20px;
+      padding-right: 0px;
     }
 
     .my-slider {
       height: 553px;
     }
-    .my-slider img{
+
+    .my-slider img {
       width: 977px;
     }
     /******/
@@ -116,9 +126,15 @@
     <section>
       <div class="my-slider">
         <ul>
-          <li><img src="images/1.jpg" alt="" /></li>
-          <li><img src="images/2.jpg" alt="" /></li>
-          <li><img src="images/3.jpg" alt=""></li>
+          <li>
+            <a href="page.html"><img src="images/1.jpg" alt="" /></a>
+          </li>
+          <li>
+            <a href="page.html"><img src="images/2.jpg" alt="" /></a>
+          </li>
+          <li>
+            <a href="page.html"><img src="images/3.jpg" alt=""></a>
+          </li>
         </ul>
       </div>
 

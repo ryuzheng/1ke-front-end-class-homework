@@ -4,66 +4,93 @@
 <head>
   <meta charset="UTF-8">
   <title>SUPPLY</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="js/prefixfree.min.js" charset="utf-8"></script>
   <script src="js/jquery-2.1.4.min.js"></script>
   <style media="screen">
-    body {
-      margin: 0px;
-      padding: 0px;
+    .container {
+      width: 100%;
     }
 
-    #logo {
-      width: 60px;
+    a {
+      text-decoration: none;
     }
+    /******/
 
-    .fixed {
-      position: fixed;
+    nav {
       width: 20%;
+      float: left;
       padding-top: 200px;
-      padding-left: 45px;
     }
 
-    .fixed a {
-      font-family: "微软雅黑";
+    nav img {
+      width: 60px;
+      margin-left: 60px;
+    }
+
+    nav ul {
+      margin-left: 20px;
+    }
+
+    nav ul li {
+      list-style: none;
     }
 
     .category {
-      margin-top: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 25px;
     }
 
     .category a {
-      color: #2c3e50;
-      font-weight: bold;
+      color: #000;
     }
 
     #mens a {
-      color: red;
+      color: #f22222;
+    }
+
+    .information {
+      text-transform: capitalize;
+      font-weight: lighter;
+      line-height: 25px;
     }
 
     .information a {
       color: #bdc3c7;
     }
+    /******/
 
-    .col-md-5 {
-      margin-top: 20px;
-      width: 580px;
+    section {
+      float: left;
+      width: 40%;
+    }
+
+    .fa-chevron-left, .backto a {
+      color: #A9A4A0;
+    }
+
+    .backto a {
+      font-weight: lighter;
     }
 
     .backto {
       margin-top: 50px;
     }
 
-    .glyphicon.glyphicon-usd {
-      margin-top: 20px;
+    .fa-usd {
+      font-weight: bold;
+      color: #5f5f5f;
     }
 
-    .col-md-5 p {
-      margin: 30px 0;
-      padding-right: 50px;
+    .introduction p {
+      margin: 30px 240px 30px 0;
+      color: #5f5f5f;
     }
 
-    .col-md-5 h2 {
-      margin: 30px 0;
+    .introduction h3 {
+      margin: 100px 0 20px 0;
     }
 
     .addtocart label {
@@ -74,7 +101,7 @@
 
     .addtocart input {
       display: block;
-      margin: 10px 0;
+      margin: 30px 0;
     }
 
     input[type="submit"] {
@@ -84,39 +111,39 @@
       color: #fff;
     }
 
-    .glyphicon-share-alt {
-      margin-top: 20px;
+    .fa-share-alt {
+      margin-top: 10px;
     }
 
     .cart {
       position: fixed;
       right: 0;
       top: 0;
-      width: 200px;
+      width: 300px;
       height: 60px;
-      line-height: 30px;
+      line-height: 60px;
       background-color: #000;
       color: #fff;
-      text-align: center;
       display: none;
     }
 
-    .detail {
-      display: inline;
+    .fa-shopping-cart {
+      margin-left: 30px;
     }
 
-    .money {
-      display: inline;
+    .fa-usd {
+      margin-left: 40px;
+      color: #fff;
     }
   </style>
   <script type="text/javascript">
     $(document).ready(function() {
       $("#submit").click(function() {
-        $(".detail").empty();
-        $("#usd").empty();
+        $(".fa-shopping-cart").empty();
+        $(".fa-usd").empty();
         var total = $("#num").val() * 195.00;
-        $(".detail").append("<span>" + $("#num").val() + " item</span>");
-        $("#usd").append(total + "....");
+        $(".fa-shopping-cart").append("&nbsp;&nbsp;&nbsp;Cart - " + $("#num").val() + " item");
+        $(".fa-usd").append(total.toFixed(2));
         $(".cart").css("display", "block");
       });
     });
@@ -125,50 +152,48 @@
 
 <body>
   <div class="container">
-      <nav>
-        <a href="#" class="logo">
-          <img src="images/logo.png">
-        </a>
-        <ul class="category">
-          <li><a href="page.html">mens</a></li>
-          <li><a href="#">womens</a></li>
-          <li><a href="#">lifestyle</a></li>
-        </ul>
-        <ul class="information">
-          <li><a href="#">about</a></li>
-          <li><a href="#">blog</a></li>
-          <li><a href="#">readme</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <a href="1ke-class9.html" class="logo">
+        <img src="images/logo.png">
+      </a>
+      <ul class="category">
+        <li id="mens"><a href="#">mens</a></li>
+        <li><a href="1ke-class9.html">womens</a></li>
+        <li><a href="1ke-class9.html">lifestyle</a></li>
+      </ul>
+      <ul class="information">
+        <li><a href="1ke-class9.html">about</a></li>
+        <li><a href="1ke-class9.html">blog</a></li>
+        <li><a href="1ke-class9.html">readme</a></li>
+      </ul>
+    </nav>
 
-      <div class="col-md-5">
-        <img src="images/studio-session-011.jpg" class="img-responsive">
-      </div>
+    <section class="product">
+      <img src="images/studio-session-011.jpg">
+    </section>
 
-      <div class="col-md-5">
-        <div class="backto">
-          <a href="index.html">
-            <span class="glyphicon glyphicon-menu-left"></span> MENS </a>
-        </div>
-        <h3>Classic Glasgow in Silver</h3>
-        <div class="glyphicon glyphicon-usd">195.00</div>
-        <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent
-          commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-        <p>Source – Need Supply Co. </p>
-        <section class="addtocart">
-          <label for="num">QUANTITY:</label>
-          <input id="num" size="4" max="9999" min="1" value="1" type="number" step="1">
-          <input type="submit" id="submit" value="Add to Cart">
-        </section>
-        <div class="glyphicon glyphicon-share-alt">share</div>
+    <section class="introduction">
+      <div class="backto">
+        <a href="1ke-class9.html">
+          <span class="fa fa-chevron-left"></span> Mens </a>
       </div>
+      <h3>Classic Glasgow in Silver</h3>
+      <div class="fa fa-usd">195.00</div>
+      <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent
+        commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+      <p>Source – Need Supply Co. </p>
+      <div class="addtocart">
+        <label for="num">QUANTITY:</label>
+        <input id="num" size="4" max="9999" min="1" value="1" type="number" step="1">
+        <input type="submit" id="submit" value="Add to Cart">
+      </div>
+      <div class="fa fa-share-alt">share</div>
+    </section>
 
-      <div class="cart">
-        <span class="glyphicon glyphicon-shopping-cart"></span>
-        <div class="detail">Cart -
-        </div>
-        <span class="glyphicon glyphicon-usd" id="usd"></span>
-      </div>
+    <div class="cart">
+      <span class="fa fa-shopping-cart"></span>
+      <span class="fa fa-usd"></span>
+    </div>
 
   </div>
 

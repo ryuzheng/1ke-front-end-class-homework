@@ -30,16 +30,6 @@ a {
 
 /**定义导航样式，需要修改为右边**/
 
-.rainbow {
-  width: 100%;
-  height: 34px;
-  position: fixed;
-  bottom: 0;
-  z-index: 1;
-  /*background: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, Purple);
-  background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, Purple);
-  background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, Purple);*/
-}
 .st-container input, .st-container a {
   width: 20%;
   height: 34px;

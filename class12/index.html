@@ -8,21 +8,22 @@
   <title>CSS3实现的页面平滑过渡</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/prefixfree.min.js" charset="utf-8"></script>
+  <!-- <script src="js/prefixfree.min.js" charset="utf-8"></script> -->
   <script src="js/scrollProgress.min.js" charset="utf-8"></script>
-  <script type="text/javascript">
-    scrollProgress.set({
-      color: '#FF9900',
-      height: '34px'
-    });
-  </script>
+  <script>
+			scrollProgress.set({
+          color: '#FF9900',
+          height: '12px',
+					bottom: false
+				});
+	</script>
 </head>
 
 <body>
+  <div id="scrollProgress"></div>
   <div class="container">
     <div class="st-container">
       <!--nav begin-->
-      <div class="rainbow"></div>
       <input type="radio" name="radio-set" checked="checked" id="st-control-1">
       <a href="#st-panel-1">daohang1</a>
       <input type="radio" name="radio-set" id="st-control-2">

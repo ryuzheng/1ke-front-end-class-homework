@@ -2,14 +2,14 @@ html {
   overflow: scroll;
   overflow-x: hidden;
 }
-::-webkit-scrollbar {
+ ::-webkit-scrollbar {
   width: 0;
   /* remove scrollbar space */
-  background: transparent
+  background: transparent;
   /* optional: just make scrollbar invisible */
 }
 /* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
+ ::-webkit-scrollbar-thumb {
   background: #FF0000;
 }
 body {
@@ -29,8 +29,33 @@ a {
   height: 100%;
   position: absolute;
   left: 0;
-  top: 0
+  top: 0;
   /**定义导航样式，需要修改为右边**/
+  input,
+  a {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    line-height: 34px;
+    position: fixed;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+    /*font-weight: 700;
+    font-size: 16px;*/
+    background: #ff9900;
+    /*text-align: center;*/
+    color: #fff;
+    /*text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);*/
+  }
+  input {
+    opacity: 0;
+    z-index: 100;
+  }
+  input:checked+a,
+  input:checked:hover+a {
+    -webkit-filter: grayscale(1);
+  }
   /*input:checked+a:after {
     content: "";
     width: 0;
@@ -43,57 +68,32 @@ a {
     left: 50%;
     margin-left: -20px;
   }*/
-}
-.st-container input,
-.st-container a {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  line-height: 34px;
-  position: fixed;
-  right: 20px;
-  cursor: pointer;
-  z-index: 10;
-  /*font-weight: 700;
-    font-size: 16px;*/
-  background: #ff9900;
-  /*text-align: center;*/
-  color: #fff
-  /*text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);*/
-}
-.st-container input {
-  opacity: 0;
-  z-index: 100;
-}
-.st-container input:checked + a,
-.st-container input:checked:hover + a {
-  -webkit-filter: grayscale(1);
-}
-.st-container input:hover + a {
-  -webkit-filter: opacity(0.2);
+  input:hover+a {
+    -webkit-filter: opacity(.2);
+  }
 }
 #st-control-1,
-#st-control-1 + a {
+#st-control-1+a {
   top: 40%;
   right: 20px;
 }
 #st-control-2,
-#st-control-2 + a {
+#st-control-2+a {
   top: 42%;
   right: 20px;
 }
 #st-control-3,
-#st-control-3 + a {
+#st-control-3+a {
   top: 44%;
   right: 20px;
 }
 #st-control-4,
-#st-control-4 + a {
+#st-control-4+a {
   top: 46%;
   right: 20px;
 }
 #st-control-5,
-#st-control-5 + a {
+#st-control-5+a {
   top: 48%;
   right: 20px;
 }
@@ -107,38 +107,42 @@ a {
 .st-scroll {
   left: 0;
   top: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
-  -webkit-transition: all 0.6s ease-in-out;
-          transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .st-panel {
   background: #fff;
   overflow: hidden;
 }
 #st-control-1:checked ~ .st-scroll {
-  -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-          transform: translateY(0%);
+  transform: translateY(0%);
 }
 #st-control-2:checked ~ .st-scroll {
   -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 #st-control-3:checked ~ .st-scroll {
   -webkit-transform: translateY(-200%);
+  -moz-transform: translateY(-200%);
+  -o-transform: translateY(-200%);
   -ms-transform: translateY(-200%);
   transform: translateY(-200%);
 }
 #st-control-4:checked ~ .st-scroll {
   -webkit-transform: translateY(-300%);
+  -moz-transform: translateY(-300%);
+  -o-transform: translateY(-300%);
   -ms-transform: translateY(-300%);
   transform: translateY(-300%);
 }
 #st-control-5:checked ~ .st-scroll {
   -webkit-transform: translateY(-400%);
+  -moz-transform: translateY(-400%);
+  -o-transform: translateY(-400%);
   -ms-transform: translateY(-400%);
   transform: translateY(-400%);
 }

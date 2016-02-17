@@ -1,15 +1,17 @@
-html {
-  overflow: auto;
-}
+/**在webkit内核下隐藏滚动条**/
 ::-webkit-scrollbar {
   width: 0;
   /* remove scrollbar space */
-  background: transparent;
+  background: transparent
   /* optional: just make scrollbar invisible */
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
+}
+/*****/
+html {
+  overflow: auto;
 }
 body {
   background: #ddd;
@@ -20,15 +22,15 @@ body {
 }
 a {
   text-decoration: none;
-  color: #555;
 }
 .st-container {
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
-  top: 0;
-  /**定义导航样式，需要修改为右边**/
+  top: 0
+  /*****/
+  /**定义导航样式，修改为右边**/
   /*input:checked+a:after {
     content: "";
     width: 0;
@@ -42,47 +44,42 @@ a {
     margin-left: -20px;
   }*/
 }
-.st-container input,
-.st-container a {
+.st-container #st-control-1,
+.st-container #st-control-2,
+.st-container #st-control-3,
+.st-container #st-control-4,
+.st-container #st-control-5 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  line-height: 34px;
   position: fixed;
   right: 20px;
-  cursor: pointer;
-  z-index: 10;
-  background: #CC543A;
-  color: #fff;
+  z-index: 1000;
+  background-color: #CC543A;
 }
-.st-container input {
-  opacity: 0;
-  z-index: 100;
-}
-.st-container input:checked + a,
-.st-container input:checked:hover + a {
+.st-container #st-control-1:visited,
+.st-container #st-control-2:visited,
+.st-container #st-control-3:visited,
+.st-container #st-control-4:visited,
+.st-container #st-control-5:visited {
   -webkit-filter: grayscale(1);
 }
 .st-container input:hover + a {
   -webkit-filter: opacity(0.2);
 }
-#st-control-1,
-#st-control-1 + a {
+#st-control-1 {
   top: 40%;
   right: 20px;
 }
-#st-control-2,
-#st-control-2 + a {
+#st-control-2 {
   top: 42%;
   right: 20px;
 }
-#st-control-3,
-#st-control-3 + a {
+#st-control-3 {
   top: 44%;
   right: 20px;
 }
-#st-control-4,
-#st-control-4 + a {
+#st-control-4 {
   top: 46%;
   right: 20px;
 }
@@ -101,42 +98,13 @@ a {
 .st-scroll {
   left: 0;
   top: 0;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
-  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+          transition: all 0.6s ease-in-out;
 }
 .st-panel {
   background: #fff;
   overflow: hidden;
-}
-#st-control-1:checked ~ .st-scroll {
-  transform: translateY(0%);
-}
-#st-control-2:checked ~ .st-scroll {
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
-}
-#st-control-3:checked ~ .st-scroll {
-  -webkit-transform: translateY(-200%);
-  -moz-transform: translateY(-200%);
-  -o-transform: translateY(-200%);
-  -ms-transform: translateY(-200%);
-  transform: translateY(-200%);
-}
-#st-control-4:checked ~ .st-scroll {
-  -webkit-transform: translateY(-300%);
-  -moz-transform: translateY(-300%);
-  -o-transform: translateY(-300%);
-  -ms-transform: translateY(-300%);
-  transform: translateY(-300%);
-}
-#st-control-5:checked ~ .st-scroll {
-  -webkit-transform: translateY(-400%);
-  -moz-transform: translateY(-400%);
-  -o-transform: translateY(-400%);
-  -ms-transform: translateY(-400%);
-  transform: translateY(-400%);
 }

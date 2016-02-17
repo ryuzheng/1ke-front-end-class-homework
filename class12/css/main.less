@@ -1,9 +1,8 @@
-@right:20px;
-@top:40%;
 //定义变量
-html {
-  overflow: auto;
-}
+@right: 20px;
+@top: 40%;
+@z-index: 1;
+/**在webkit内核下隐藏滚动条**/
  ::-webkit-scrollbar {
   width: 0;
   /* remove scrollbar space */
@@ -14,16 +13,19 @@ html {
  ::-webkit-scrollbar-thumb {
   background: #FF0000;
 }
+/*****/
+html {
+  overflow: auto;
+}
 body {
   background: #ddd;
   font-weight: 400;
   font-size: 15px;
   color: #333;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; //使用灰阶平滑
 }
 a {
   text-decoration: none;
-  color: #555;
 }
 .st-container {
   width: 100%;
@@ -31,27 +33,23 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  /**定义导航样式，需要修改为右边**/
-  input,
-  a {
+  /*****/
+  /**定义导航样式，修改为右边**/
+  #st-control-1,
+  #st-control-2,
+  #st-control-3,
+  #st-control-4,
+  #st-control-5 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    line-height: 34px;
     position: fixed;
     right: @right;
-    cursor: pointer;
-    z-index: 10;
-    background: #CC543A;
-    color: #fff;
-  }
-  input {
-    opacity: 0;
-    z-index: 100;
-  }
-  input:checked+a,
-  input:checked:hover+a {
-    -webkit-filter: grayscale(1);
+    z-index: @z-index*1000;
+    background-color: #CC543A;
+    &:visited {
+      -webkit-filter: grayscale(1);
+    }
   }
   /*input:checked+a:after {
     content: "";
@@ -69,23 +67,27 @@ a {
     -webkit-filter: opacity(.2);
   }
 }
+// #st-control-1+a
 #st-control-1,
-#st-control-1+a {
+ {
   top: @top;
   right: @right;
 }
+// #st-control-2+a
 #st-control-2,
-#st-control-2+a {
+ {
   top: @top+2%;
   right: @right;
 }
+// #st-control-3+a
 #st-control-3,
-#st-control-3+a {
+ {
   top: @top+4%;
   right: @right;
 }
+// #st-control-4+a
 #st-control-4,
-#st-control-4+a {
+ {
   top: @top+6%;
   right: @right;
 }
@@ -112,34 +114,34 @@ a {
   background: #fff;
   overflow: hidden;
 }
-#st-control-1:checked ~ .st-scroll {
-  transform: translateY(0%);
-}
-#st-control-2:checked ~ .st-scroll {
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
-}
-#st-control-3:checked ~ .st-scroll {
-  -webkit-transform: translateY(-200%);
-  -moz-transform: translateY(-200%);
-  -o-transform: translateY(-200%);
-  -ms-transform: translateY(-200%);
-  transform: translateY(-200%);
-}
-#st-control-4:checked ~ .st-scroll {
-  -webkit-transform: translateY(-300%);
-  -moz-transform: translateY(-300%);
-  -o-transform: translateY(-300%);
-  -ms-transform: translateY(-300%);
-  transform: translateY(-300%);
-}
-#st-control-5:checked ~ .st-scroll {
-  -webkit-transform: translateY(-400%);
-  -moz-transform: translateY(-400%);
-  -o-transform: translateY(-400%);
-  -ms-transform: translateY(-400%);
-  transform: translateY(-400%);
-}
+// #st-control-1:checked ~ .st-scroll {
+//   transform: translateY(0%);
+// }
+// #st-control-2:checked ~ .st-scroll {
+//   -webkit-transform: translateY(-100%);
+//   -moz-transform: translateY(-100%);
+//   -o-transform: translateY(-100%);
+//   -ms-transform: translateY(-100%);
+//   transform: translateY(-100%);
+// }
+// #st-control-3:checked ~ .st-scroll {
+//   -webkit-transform: translateY(-200%);
+//   -moz-transform: translateY(-200%);
+//   -o-transform: translateY(-200%);
+//   -ms-transform: translateY(-200%);
+//   transform: translateY(-200%);
+// }
+// #st-control-4:checked ~ .st-scroll {
+//   -webkit-transform: translateY(-300%);
+//   -moz-transform: translateY(-300%);
+//   -o-transform: translateY(-300%);
+//   -ms-transform: translateY(-300%);
+//   transform: translateY(-300%);
+// }
+// #st-control-5:checked ~ .st-scroll {
+//   -webkit-transform: translateY(-400%);
+//   -moz-transform: translateY(-400%);
+//   -o-transform: translateY(-400%);
+//   -ms-transform: translateY(-400%);
+//   transform: translateY(-400%);
+// }

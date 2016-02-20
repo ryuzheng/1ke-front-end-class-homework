@@ -2,7 +2,7 @@
 ::-webkit-scrollbar {
   width: 0;
   /* remove scrollbar space */
-  background: transparent
+  background: transparent;
   /* optional: just make scrollbar invisible */
 }
 /* optional: show position indicator in red */
@@ -20,12 +20,10 @@
 }
 @keyframes slideupin {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transform: translateY(100%);
   }
   100% {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
 body {
@@ -44,7 +42,7 @@ a {
   height: 100%;
   position: absolute;
   left: 0;
-  top: 0
+  top: 0;
   /**定义导航样式，修改为右边**/
   /**内容栏**/
 }
@@ -71,36 +69,29 @@ a {
 .st-container #st-control-3:target:hover,
 .st-container #st-control-4:target:hover,
 .st-container #st-control-5:target:hover {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  filter: grayscale(1);
 }
 .st-container #st-control-1:hover,
 .st-container #st-control-2:hover,
 .st-container #st-control-3:hover,
 .st-container #st-control-4:hover,
 .st-container #st-control-5:hover {
-  -webkit-filter: opacity(0.2);
-          filter: opacity(0.2);
+  filter: opacity(0.2);
 }
 .st-container #st-control-1 {
   top: 40%;
-  right: 20px;
 }
 .st-container #st-control-2 {
   top: 42%;
-  right: 20px;
 }
 .st-container #st-control-3 {
   top: 44%;
-  right: 20px;
 }
 .st-container #st-control-4 {
   top: 46%;
-  right: 20px;
 }
 .st-container #st-control-5 {
   top: 48%;
-  right: 20px;
 }
 .st-container .st-scroll,
 .st-container .st-panel {
@@ -117,16 +108,14 @@ a {
   overflow: hidden;
   position: absolute;
   -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-      transform: translateY(-100%);
+  transform: translateY(-100%);
   -webkit-transition: -webkit-transform 0.35s 0.05s linear;
   transition: transform 0.35s 0.05s linear;
 }
 .st-container .st-scroll .st-panel:target {
   z-index: 100;
   -webkit-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-      transform: translateY(0%);
+  transform: translateY(0%);
   -webkit-animation: slideupin 0.35s 0.05s linear forwards;
   animation: slideupin 0.35s 0.05s linear forwards;
 }

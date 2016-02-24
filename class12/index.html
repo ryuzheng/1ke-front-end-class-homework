@@ -1,59 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CSS3实现的页面平滑过渡</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/prefixfree.min.js" charset="utf-8"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>fullPage.js - Pure Javascript version</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
+	<meta name="keywords" content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
+
+	<style>
+		/* Reset CSS
+		 * --------------------------------------- */
+
+		body,
+		div,
+		dl,
+		dt,
+		dd,
+		ul,
+		ol,
+		li,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		pre,
+		form,
+		fieldset,
+		input,
+		textarea,
+		p,
+		blockquote,
+		th,
+		td {
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		fieldset,
+		img {
+			border: 0;
+		}
+
+		address,
+		caption,
+		cite,
+		code,
+		dfn,
+		em,
+		strong,
+		th,
+		var {
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		strong {
+			font-weight: bold;
+		}
+
+		ol,
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		caption,
+		th {
+			text-align: left;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			font-size: 100%;
+			margin: 0;
+			padding: 0;
+			color: #444;
+		}
+
+		q:before,
+		q:after {
+			content: '';
+		}
+
+		abbr,
+		acronym {
+			border: 0;
+		}
+		/* Custom CSS
+		 * --------------------------------------- */
+
+		body {
+			font-family: arial, helvetica;
+			color: #F2F2F2;
+		}
+
+		h1 {
+			font-size: 6em;
+		}
+
+		p {
+			font-size: 2em;
+		}
+
+		.content {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+		}
+		/* Section 1
+		 * --------------------------------------- */
+
+		#section0 {
+			background-color: #BFDA00;
+		}
+
+		#section0 h1 {
+			color: #444;
+		}
+
+		#section0 p {
+			color: #333;
+			opacity: 0.4;
+		}
+		/* Section 2
+		 * --------------------------------------- */
+
+		#section1 {
+			background-color: #2EBE21;
+		}
+
+		#section1 h1 {
+			color: #fff;
+		}
+
+		#section1 p {
+			opacity: 0.8;
+		}
+		/* Section 3
+		 * --------------------------------------- */
+
+		#section2 {
+			background-color: #2C3E50;
+		}
+
+		#section2 h1 {
+			color: #F2F2F2;
+		}
+
+		#section2 p {
+			opacity: 0.6;
+		}
+
+		.st-control {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			position: fixed;
+			right: 20px;
+			z-index: 9999;
+			background: #cc543a;
+		}
+
+		.st-control-1:hover,
+		.st-control-2:hover,
+		.st-control-3:hover,
+		.st-control-4:hover,
+		.st-control-5:hover {
+			-webkit-filter: opacity(0.2);
+			filter: opacity(0.2);
+		}
+
+		.st-control-1 {
+			top: 40%;
+		}
+
+		.st-control-2 {
+			top: 42%;
+		}
+
+		.st-control-3 {
+			top: 44%;
+		}
+
+		.st-control-4 {
+			top: 46%;
+		}
+
+		.st-control-5 {
+			top: 48%;
+		}
+	</style>
 </head>
 
 <body>
-  <div class="st-container">
-    <!--nav begin-->
-    <!-- <input type="radio" name="radio-set" checked="checked" id="st-control-1"> -->
-    <a href="#st-panel-1" id="st-control-1"></a>
-    <!-- <input type="radio" name="radio-set" id="st-control-2"> -->
-    <a href="#st-panel-2" id="st-control-2"></a>
-    <!-- <input type="radio" name="radio-set" id="st-control-3"> -->
-    <a href="#st-panel-3" id="st-control-3"></a>
-    <!-- <input type="radio" name="radio-set" id="st-control-4"> -->
-    <a href="#st-panel-4" id="st-control-4"></a>
-    <!-- <input type="radio" name="radio-set" id="st-control-5"> -->
-    <a href="#st-panel-5" id="st-control-5"></a>
-    <!--nav end-->
-    <!--content begin-->
-    <div class="st-scroll">
-      <section class="st-panel" id="st-panel-1">
-        <div>第一页</div>
-        <h2>小标题1</h2>
-        <p>运算提供了加，减，乘，除操作；我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。LESS中的函数一一映射了JavaScript代码，如果你愿意的话可以操作属性值。</p>
-      </section>
-      <section class="st-panel" id="st-panel-2">
-        <div>第二页</div>
-        <h2>小标题2</h2>
-        <p>运算提供了加，减，乘，除操作；我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。LESS中的函数一一映射了JavaScript代码，如果你愿意的话可以操作属性值。</p>
-      </section>
-      <section class="st-panel" id="st-panel-3">
-        <div>第三页</div>
-        <h2>小标题3</h2>
-        <p>运算提供了加，减，乘，除操作；我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。LESS中的函数一一映射了JavaScript代码，如果你愿意的话可以操作属性值。</p>
-      </section>
-      <section class="st-panel" id="st-panel-4">
-        <div>第四页</div>
-        <h2>小标题4</h2>
-        <p>运算提供了加，减，乘，除操作；我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。LESS中的函数一一映射了JavaScript代码，如果你愿意的话可以操作属性值。</p>
-      </section>
-      <section class="st-panel" id="st-panel-5">
-        <div>第五页</div>
-        <h2>小标题5</h2>
-        <p>运算提供了加，减，乘，除操作；我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。LESS中的函数一一映射了JavaScript代码，如果你愿意的话可以操作属性值。</p>
-      </section>
-    </div>
-  </div>
+	<a href="#firstPage" class="st-control st-control-1"></a>
+	<a href="#secondPage" class="st-control st-control-2"></a>
+	<a href="#3rdPage" class="st-control st-control-3"></a>
+	<a href="#4thpage" class="st-control st-control-4"></a>
+	<a href="#lastPage" class="st-control st-control-5"></a>
+
+	<div id="fullpage">
+		<div class="section " id="section0">
+			<div class="content">
+				<h1>fullPage.js</h1>
+				<p>Javascript only version</p>
+			</div>
+		</div>
+		<div class="section" id="section1">
+			<div class="slide" id="slide1">
+				<div class="content">
+					<h1>No need for jQuery</h1>
+					<p>
+						5 Kb gzipped!!
+					</p>
+					<p>
+						Improve the loading time of your site!
+					</p>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="content">
+					<h1>Slides too!</h1>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="content">
+					<h1>More slides!</h1>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<div class="content">
+				<h1>Compatible</h1>
+				<p>IE 8+ support.</p>
+			</div>
+		</div>
+		<div class="section" id="section3">
+			<div class="content">
+				<h1>Compatible</h1>
+				<p>IE 8+ support.</p>
+			</div>
+		</div>
+		<div class="section" id="section4">
+			<div class="content">
+				<h1>Compatible</h1>
+				<p>IE 8+ support.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="javascript.fullPage.js"></script>
+	<script type="text/javascript">
+		fullpage.initialize('#fullpage', {
+			anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+			menu: '#menu',
+			css3: true
+		});
+	</script>
+
 </body>
 
 </html>

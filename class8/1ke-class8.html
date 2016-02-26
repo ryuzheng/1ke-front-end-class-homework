@@ -89,7 +89,12 @@
     /**去除所有待办**/
     $(document).ready(function() {
       $("#clear").click(function() {
-        $(".col-sm-12").empty();
+        $(".todo-ul").empty();
+      });
+
+      /**添加done标签**/
+      $(".todo").on('click', 'li', function() {
+        $(this).toggleClass("todo-done");
       });
     });
 
@@ -100,9 +105,8 @@
         if (todo == "") {
           $("#show").fadeTo("slow", 1);
         } else {
-          $(".col-sm-12").append('<div role="alert" class="alert alert-info alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + todo + '</div>');
+          $(".todo-ul").append('<li><div class="todo-icon fui-list"></div><div class="todo-content"><h4 class="todo-name">' + todo + '</h4>' + Date() + '</div></li>');
         }
-        // return false();
       });
 
       $("#show").click(function(){
@@ -115,6 +119,11 @@
         $(this).remove();
       });
     });**/
+
+    /**表单提交时不跳转**/
+    function addtolist(){
+      return false;
+    }
   </script>
 </head>
 
@@ -134,7 +143,9 @@
     <div id="show" class="alert alert-danger alert-dismissible" style="display: none;">待办事项不能为空
     </div>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="todo">
+        <ul class="todo-ul">
+        </ul>
       </div>
     </div>
 

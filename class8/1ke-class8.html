@@ -57,7 +57,7 @@
 
     #show {
       position: absolute;
-      top:0;
+      top: 0;
       left: 50%;
     }
 
@@ -102,17 +102,20 @@
     $(document).ready(function() {
       $("form").submit(function() {
         var todo = $("#input-text").val();
+        var time = new Date();
         if (todo == "") {
           $("#show").fadeTo("slow", 1);
         } else {
-          $(".todo-ul").append('<li><div class="todo-icon fui-list"></div><div class="todo-content"><h4 class="todo-name">' + todo + '</h4>' + Date() + '</div></li>');
+          $(".todo-ul").append('<li><div class="todo-icon fui-list"></div><div class="todo-content"><h4 class="todo-name">' + todo + '</h4>' + time.toLocaleString() + '</div></li>');
         }
       });
 
-      $("#show").click(function(){
-        $("#show").fadeTo("slow",0);
+      $("#show").click(function() {
+        $("#show").fadeTo("slow", 0);
       });
     });
+
+
 
     /**$(document).ready(function() {
       $("li").click(function() {
@@ -121,7 +124,7 @@
     });**/
 
     /**表单提交时不跳转**/
-    function addtolist(){
+    function addtolist() {
       return false;
     }
   </script>

@@ -132,17 +132,12 @@
         $(this).remove();
       });
     });**/
-
-    /**表单提交时不跳转**/
-    function addtolist() {
-      return false;
-    }
   </script>
 </head>
 
 <body>
   <header>
-    <form action="javascript:addtolist()">
+    <form action="javascript:void(0)">
       <label for="title">GoToDo</label>
       <input type="text" id="input-text" class="form-control" placeholder="请添加待办事项">
       <div class="fui-trash" id="clear" title="清除所有待办事项">
